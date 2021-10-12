@@ -1,4 +1,4 @@
-name: pyogame
+name: swiss-qr-bill
 on:
   pull_request:
   push:
@@ -13,7 +13,7 @@ jobs:
       - name: python3.8
         uses: docker://python:3.8
       - name: dependecys
-        run: pip install -r requirements.txt
+        run: python setup.py install
       - name: compile
         run: python -c "from qrbill import QRBill"
       - name: tests
